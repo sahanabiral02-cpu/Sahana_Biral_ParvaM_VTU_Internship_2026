@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+          li{
+            font-size: 20px
+        }
+        
+        li:first-child{
+            color: red;
+        }
+
+        li:last-child{
+            color:blue;
+        } 
+
+        /* Even Child */
+        li:nth-child(2n +1){
+            color: blue;
+        }
+
+        /* Odd Child */
+        li:nth-child(2n +1){
+            color: green;
+        }
+
+        /* Psuedo Element */
+        h1::first-letter{
+            color: red;
+            font-size: 40px;
+        }
+
+        div{
+            border: 1px solid black;
+        }
+        h1:first-of-type{
+            background-color: black;
+            color: white;
+        }
+
+        h1:first-of-type{
+            background-color: yellow;
+            color: red;
+        }
+        </style>
+</head>
+<body>
+    <h1>List Items</h1>
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+        <li>Item6</li>
+        <li>Item7</li>
+        <li>Item8</li>
+        <li>Item9</li>
+        <li>Item10</li>
+    </ul>
+    <h1>Heading with in div</h1>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam tempore ad quas aut excepturi rerum incidunt eveniet eos nesciunt assumenda quisquam numquam possimus ipsam facere quia accusamus, unde dolorem veniam.
+</body> 
+</html>
+       h1:first-of-type{
+       background-color-yellow:
+       color: red;
+       }
+

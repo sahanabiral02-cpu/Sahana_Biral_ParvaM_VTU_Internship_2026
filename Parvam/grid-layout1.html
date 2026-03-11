@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Pseudo-Classes Example</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    ul li {
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #f0f0f0;
+      list-style-type: none;
+      cursor: pointer;
+    }
+
+    /* Pseudo-classes */
+    /* Change background when hovered */
+    li:hover {
+      background-color: #d1e7dd;
+    }
+
+    /* Change color when clicked */
+    li:active {
+      color: red;
+    }
+
+    /* Style first and last list items */
+    li:first-child {
+      font-weight: bold;
+    }
+
+    li:last-child {
+      font-style: italic;
+    }
+
+    /* Input focus style */
+    input:focus {
+      outline: 2px solid #4CAF50;
+    }
+
+    /* Link hover */
+    a:hover {
+      color: orange;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Pseudo-Classes Demo</h2>
+
+  <h3>List Example</h3>
+  <ul>
+    <li>First Item</li>
+    <li>Second Item</li>
+    <li>Third Item</li>
+    <li>Last Item</li>
+  </ul>
+
+  <h3>Input Example</h3>
+  <input type="text" placeholder="Focus on me">
+
+  <h3>Link Example</h3>
+  <a href="#">Hover over this link</a>
+</body>
+</html>

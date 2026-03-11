@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Window Events</title>
+  <style>
+    body {
+      height: 2000px; /* For scroll */
+    }
+  </style>
+</head>
+<body>
+
+<h2>Window Events Example</h2>
+
+<script>
+
+  // When page loads
+  window.addEventListener("load", () => {
+    console.log("Page Loaded!");
+  });
+
+  // When window resized
+  window.addEventListener("resize", () => {
+    console.log("Window Resized!");
+  });
+
+  // When page scroll
+  window.addEventListener("scroll", () => {
+    console.log("Page Scrolling!");
+  });
+
+  // Before leaving page
+  window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "";
+  });
+
+</script>
+
+</body>
+</html>

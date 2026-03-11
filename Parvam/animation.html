@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            border-left: 3px solid black;
+            border-right: 3px solid black;
+            border-bottom: 3px solid black;
+        }
+
+        .ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            transform: translate(100px, 200px);
+            animation-name: bounce;
+            animation-duration: 3s;
+            /* animation-timing-function: cubic-bezier(0.05, 0.03, 1, 1.39); */
+            animation-iteration-count: infinite;
+        }
+        .second-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(68, 0, 255 green, blue); 
+            transform: translate(100px, 100px);
+            animation-name: diagonalBounce;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        } 
+        .third-ball{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: rgb(68, 0, 255 green, blue); 
+            transform: translate(100px, 100px);
+            animation-name: diagonalBounce;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }  
+        @keyframes circle{
+            0%{
+                transform: translate(0px, 0px);
+            }
+            20%{
+                 transform: translate(200px, 0px);
+            }
+            40%{
+                transform: translate(200px, 200px);
+            }
+            60%{
+                transform: translate(0px, 200px);
+            }
+            80%{
+               transform: translate(200px, 0px);
+            }
+            100%{
+                transform: translate(100px, 100px);
+            }
+        }    
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="ball"></div>
+    </div>
+    <div class="box">
+        <div class="second-ball"></div>
+    </div>
+    <div class="box">
+        <div class="third-ball"></div>
+    </div>
+
+    <div class="outer-box">
+        <div class=""
+    </div>
+</body>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clipboard Events</title>
+</head>
+<body>
+
+<h2>Clipboard Events Example</h2>
+
+<input type="text" id="myInput" placeholder="Type something here">
+
+<script>
+  const input = document.getElementById("myInput");
+
+  input.addEventListener("copy", () => {
+    console.log("Text Copied!");
+  });
+
+  input.addEventListener("cut", () => {
+    console.log("Text Cut!");
+  });
+
+  input.addEventListener("paste", () => {
+    console.log("Text Pasted!");
+  });
+</script>
+
+</body>
+</html>
+
