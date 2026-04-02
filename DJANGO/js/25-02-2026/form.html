@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advanced Form and Table</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+        }
+
+        input, select {
+            padding: 6px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 6px 12px;
+            margin: 3px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        .addBtn { background-color: green; }
+        .editBtn { background-color: orange; }
+        .deleteBtn { background-color: red; }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 95%;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form id="userForm">
+    Name: <input type="text" id="name" required><br>
+    Email: <input type="email" id="email" required><br>
+    Phone: <input type="text" id="phone" required><br>
+
+    Gender:
+    <select id="gender" required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select><br>
+
+    Age: <input type="number" id="age" required><br>
+
+    <button type="submit" class="addBtn">Add</button>
+</form>
+
+<table id="dataTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Actions</th>
+    </tr>
+</table>
+
+<script>
+    var form = document.getElementById("userForm");
+    var table = document.getElementById("dataTable");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var gender = document.getElementById("gender").value;
+        var age = document.getElementById("age").value;
+
+        // Phone validation (10 digits only)
+        var phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) {
+            alert("Phone number must be 10 digits!");
+            return;
+        }
+
+        var newRow = table.insertRow();
+
+        newRow.insertCell(0).innerHTML = name;
+        newRow.insertCell(1).innerHTML = email;
+        newRow.insertCell(2).innerHTML = phone;
+        newRow.insertCell(3).innerHTML = gender;
+        newRow.insertCell(4).innerHTML = age;
+
+        // Actions Cell
+        var actionCell = newRow.insertCell(5);
+        actionCell.innerHTML =
+            "<button class='editBtn' onclick='editRow(this)'>Edit</button>" +
+            "<button class='deleteBtn' onclick='deleteRow(this)'>Delete</button>";
+
+        form.reset();
+    });
+
+    function deleteRow(button) {
+        var row = button.parentNode.parentNode;
+        row.remove();
+    }
+
+    function editRow(button) {
+        var row = button.parentNode.parentNode;
+
+        for (var i = 0; i < 5; i++) {
+            var cell = row.cells[i];
+            var oldValue = cell.innerHTML;
+            cell.innerHTML = "<input type='text' value='" + oldValue + "'>";
+        }
+
+        button.innerHTML = "Save";
+        button.onclick = function() {
+            saveRow(this);
+        };
+    }
+
+    function saveRow(button) {
+        var row = button.parentNode.parentNode;
+
+        for (var i = 0; i < 5; i++) {
+            var input = row.cells[i].firstChild;
+            row.cells[i].innerHTML = input.value;
+        }
+
+        button.innerHTML = "Edit";
+        button.onclick = function() {
+            editRow(this);
+        };
+    }
+</script>
+
+</body>
+</html>

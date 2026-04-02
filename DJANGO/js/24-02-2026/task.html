@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+</head>
+<body>
+
+    <h1>Number Checking Program</h1>
+
+    <!-- Greatest Among Three -->
+    <h3>Find Greatest Among Three Numbers</h3>
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <input type="number" id="num3" placeholder="Enter third number">
+    <button onclick="findGreatest()">Find Greatest</button>
+    <p id="greatestResult"></p>
+
+    <hr>
+
+    <!-- Odd or Even -->
+    <h3>Check Odd or Even</h3>
+    <input type="number" id="oddEvenNumber" placeholder="Enter a number">
+    <button onclick="checkOddEven()">Check</button>
+    <p id="oddEvenResult"></p>
+
+    <hr>
+
+    <!-- Multiple of 5 -->
+    <h3>Check Multiple of 5</h3>
+    <input type="number" id="multipleNumber" placeholder="Enter a number">
+    <button onclick="checkMultipleOfFive()">Check</button>
+    <p id="multipleResult"></p>
+
+<script>
+
+function findGreatest() {
+    let a = parseFloat(document.getElementById("num1").value);
+    let b = parseFloat(document.getElementById("num2").value);
+    let c = parseFloat(document.getElementById("num3").value);
+
+    let greatest;
+
+    if (a >= b && a >= c) {
+        greatest = a;
+    } else if (b >= a && b >= c) {
+        greatest = b;
+    } else {
+        greatest = c;
+    }
+
+    document.getElementById("greatestResult").innerText =
+        "Greatest number is: " + greatest;
+}
+
+function checkOddEven() {
+    let num = parseInt(document.getElementById("oddEvenNumber").value);
+
+    if (num % 2 === 0) {
+        document.getElementById("oddEvenResult").innerText =
+            num + " is Even number";
+    } else {
+        document.getElementById("oddEvenResult").innerText =
+            num + " is Odd number";
+    }
+}
+
+function checkMultipleOfFive() {
+    let num = parseInt(document.getElementById("multipleNumber").value);
+
+    if (num % 5 === 0) {
+        document.getElementById("multipleResult").innerText =
+            num + " is a Multiple of 5";
+    } else {
+        document.getElementById("multipleResult").innerText =
+            num + " is NOT a Multiple of 5";
+    }
+}
+
+</script>
+
+</body>
+</html>

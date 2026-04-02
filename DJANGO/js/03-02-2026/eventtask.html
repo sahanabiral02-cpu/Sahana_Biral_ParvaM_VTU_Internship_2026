@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Event in JS</h1>
+    <p>1. Mouse Events - mousedown, mouseup, mousemove</p>
+    <p>2. Keyboard Events - keypress</p>
+    <p>3. Form Events - focus, reset</p>
+
+    <!-- Mouse Event Buttons -->
+    <button id="btn1">Mouse Down</button>
+    <button id="btn2">Mouse Up</button>
+
+    <!-- Keyboard Event -->
+    <input type="text" id="keyInput" placeholder="Press any key">
+
+    <!-- Form Event -->
+    <form id="myForm">
+        <input type="text" placeholder="Enter name">
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+
+        // Mouse Down Event
+        const btn1 = document.getElementById("btn1");
+        btn1.addEventListener("mousedown", () => {
+            console.log("Mouse Button Pressed");
+        });
+
+        // Mouse Up Event
+        const btn2 = document.getElementById("btn2");
+        btn2.addEventListener("mouseup", () => {
+            console.log("Mouse Button Released");
+        });
+
+        // Keyboard Event
+        const keyInput = document.getElementById("keyInput");
+        keyInput.addEventListener("keypress", () => {
+            console.log("Key Pressed");
+        });
+
+        // Form Events
+        const form = document.getElementById("myForm");
+        const formInput = document.querySelector("#myForm input");
+
+        // Focus event
+        formInput.addEventListener("focus", () => {
+            console.log("Input Focused");
+        });
+
+        // Input typing event
+        formInput.addEventListener("input", (event) => {
+            console.log("You typed:", event.target.value);
+        });
+
+        // Reset event (Console Clears Here)
+        form.addEventListener("reset", () => {
+            console.clear();   // clears console
+            console.log("Form Reset");
+        });
+
+    </script>
+
+</body>
+</html>
